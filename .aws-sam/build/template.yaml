@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'music-room
+
+  Sample SAM Template for music-room
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  MusicRoomApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors: '''*'''
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: HelloWorldFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        GetUser:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: MusicRoomApi
+            Path: /users/{userId}
+            Method: GET
+        GetUsers:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: MusicRoomApi
+            Path: /users
+            Method: GET
+        PostUser:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: MusicRoomApi
+            Path: /users
+            Method: POST
+        UpdateUser:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: MusicRoomApi
+            Path: /users
+            Method: PUT
+        DeleteUser:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: MusicRoomApi
+            Path: /users/{userId}
+            Method: DELETE
+Outputs:
+  HelloWorldFunction:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - HelloWorldFunction
+      - Arn
+  HelloWorldFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value:
+      Fn::GetAtt:
+      - HelloWorldFunctionRole
+      - Arn
