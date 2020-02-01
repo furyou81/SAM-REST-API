@@ -1,0 +1,20 @@
+{
+    "aaa": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-musicroomamplifytest-aaa-233117-authRole",
+            "UnauthRoleArn": "arn:aws:iam::490327723691:role/amplify-musicroomamplifytest-aaa-233117-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::490327723691:role/amplify-musicroomamplifytest-aaa-233117-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-musicroomamplifytest-aaa-233117-deployment",
+            "UnauthRoleName": "amplify-musicroomamplifytest-aaa-233117-unauthRole",
+            "StackName": "amplify-musicroomamplifytest-aaa-233117",
+            "StackId": "arn:aws:cloudformation:eu-west-1:490327723691:stack/amplify-musicroomamplifytest-aaa-233117/f325d110-3ec6-11ea-8b9e-0a62b96e8314",
+            "AmplifyAppId": "d3qfbtiox28id3"
+        },
+        "categories": {
+            "auth": {
+                "musicroomamplifytestf4c0c6da": {}
+            }
+        }
+    }
+}

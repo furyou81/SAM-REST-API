@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"musicroomamplifytestf4c0c6da": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
